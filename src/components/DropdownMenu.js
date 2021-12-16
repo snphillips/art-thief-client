@@ -1,4 +1,6 @@
 import React from 'react';
+// the spinner in an npm package
+import LoadingSpinner from './LoadingSpinner';
 
 export default function DropdownMenu(props) {
   return (
@@ -35,6 +37,8 @@ export default function DropdownMenu(props) {
         id="submit-button"
         value="submit"
       />
+
+      <LoadingSpinner loading={props.loading} />
 
     </form>
   );
