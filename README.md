@@ -1,71 +1,96 @@
-# Getting Started with Create React App
+# Art Thief
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+View Art Thief here: https://art-thief.surge.sh/
 
-## Available Scripts
+## Project Description
+_"Good artists copy; great artists steal."_ 
 
-In the project directory, you can run:
+I don't know about that, but I do know a good way to dislodge a creative block is to inspired by the work of the great artists, designers and creators that have come before us. 
 
-### `npm start`
+_Art Thief_ allows users to view random images from the Cooper Hewitt Museum's collection, based on selected keywords such as angular, art deco, modernism etc. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+_Art Thief_ is a project to experiment with the Cooper Hewitt Museum's wonderful API.
+https://collection.cooperhewitt.org/api/
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The server (back end) is Node/Express. 
 
-### `npm test`
+The client (front end) is React.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<img src="https://i.imgur.com/O3KKdaX.png" width="450" alt="screengrab of app">
+<img src="https://i.imgur.com/NRybiUm.png" width="450" alt="screengrab of app">
+<img src="https://i.imgur.com/n8tJRAN.png" width="450" alt="screengrab of app">
+<img src="https://i.imgur.com/2R8VULw.png" width="250" alt="screengrab of app mobile view">
+<img src="https://i.imgur.com/bj13WpG.png" width="250" alt="screengrab of app mobile view">
+<img src="https://i.imgur.com/qBkmOSD.png" width="250" alt="screengrab of app mobile view">
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Geetting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1) Get an API access token from the Cooper Hewitt Museum. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Copy this token and save it for later. Give it delete access: https://collection.cooperhewitt.org/api/oauth2/authenticate/like-magic/
 
-### `npm run eject`
+2) Clone the repo
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+`git clone https://github.com/snphillips/art-thief.git`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3) Get into the correct directory
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+`cd art-thief `
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+4) Install the dependencies for the node server
 
-## Learn More
+` npm install `
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+5) Create a .env file where you will keep your API access token
 
-### Code Splitting
+`touch .env`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+6) Paste the following into your .env file but reaplace YOUR ACCESS TOKEN with the Cooper Hewitt Museum token you saved from step 1). Remember to put the token in quotes as it's a string.
 
-### Analyzing the Bundle Size
+`COOPER_API_TOKEN='YOUR ACCESS TOKEN'`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+note: you'll notice that the `.env` is listed in the .gitignore. This is to keep your access token safe from prying eyes.
 
-### Making a Progressive Web App
+7) get the node server running
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+`npm run dev` 
 
-### Advanced Configuration
+Open a browser to http://localhost:8888/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+You should see a mostly white scren with the phrase: _Hello world, let's steal some art._
 
-### Deployment
+_(TODO insert instructions about how to swictch between development and production)_
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Now check to see if you can hit the Cooper Hewitt Museum's API by pasting the following into your browser: http://localhost:8888/searchbytag/memphis
 
-### `npm run build` fails to minify
+You should see a json object listing information about the museum's collection with the keyword memphis. Yay!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# art-thief-client
+(TODO: describe reason for Redis error and how to get around it)
+
+8) Now let's get the React client working. Start by getting into the right directory:
+
+ ` cd client`
+ 
+9) Get the dependencie for the React client
+ 
+ ` npm install `
+ 
+10) Start the React server
+ 
+ `npm start`
+ 
+11) Open a browser to http://localhost:3000/  Yay!
+ 
+
+
+
+## Built With
+- node/express (server)
+- react (client)
+- axios for API calls
+- Cooper Hewitt Museum API
+- redis to cache results for quick retrieval
+- server hosted on Heroku
+- client hosted on Surge
