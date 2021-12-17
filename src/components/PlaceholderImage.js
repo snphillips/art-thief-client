@@ -6,17 +6,8 @@ export default function PlaceholderImage(props) {
 
       <img id="placeholder-image"
 
-        alt=""
-        src="./images/Cooper-Hewitt_Museum02.png"
-
-        onMouseOver={ (event) => {
-          event.currentTarget.src = "https://i.imgur.com/IwBKBye.png"
-        }}
-
-        onMouseOut={ (event) => {
-          event.currentTarget.src = "./images/Cooper-Hewitt_Museum02.png"
-        }}
-
+        alt="Exterior of the Cooper Hewitt Museum"
+        src="https://i.imgur.com/IwBKBye.png"
       />
 
     </div>
