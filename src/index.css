@@ -176,7 +176,7 @@ Placeholder image
 ================================*/
 img#placeholder-image {
   height: auto;
-  width: 100%;
+  width: 90%;
   cursor: pointer;
   margin-right: 1rem;
 }
@@ -298,10 +298,11 @@ span.footerLink a:hover{
 
 /* MODAL 100% Image Width on Smaller Screens */
 @media only screen and (max-width: 736px){
-  .modal-content {
-      width: 100%;
+  
+  .tagline {
+    font-size: .8rem;  
   }
-
+  
   button {
     font-size: 90%;
     padding: 10px;
