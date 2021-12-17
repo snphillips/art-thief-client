@@ -20,6 +20,7 @@ export default function App(props) {
     const [itemInfo, setItemInfo] = useState("");
     const [learnMoreURL, setLearnMoreURL] = useState("");
     const [value, setValue] = useState("exoticism");
+    const [displayArtResultContainer, setDisplayArtResultContainer] = useState('none');
     const [displayArtResultImage, setDisplayArtResultImage] = useState('none');
     const [displayArtResultInfo, setDisplayArtResultInfo] = useState('none');
     const [displayIntroMessage, setDisplayIntroMessage] = useState('inline');
@@ -64,6 +65,7 @@ export default function App(props) {
 
         setLoading(false);
         setDisplayPlaceholderImage("none");
+        setDisplayArtResultContainer("block");
         setDisplayArtResultImage("block");
         setImageURL(response.data.objects[0].images[0].z.url);
         setItemTitle(response.data.objects[0].title);
@@ -105,9 +107,12 @@ export default function App(props) {
                 imageURL={imageURL}
                 />  
             </div>
-           <div className="text-container">
+           <div 
+             className="text-container"
+             style={{display: displayArtResultContainer}}
+             >
             <InformationPanel 
-              displayIntroMessage={displayIntroMessage}
+              displayArtResultContainer={displayArtResultContainer}
               displayArtResultInfo={displayArtResultInfo}
               itemTitle={itemTitle} 
               itemInfo={itemInfo}

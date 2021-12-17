@@ -13,7 +13,9 @@ export default function Header(props) {
             </div>
           </h1>
           <div className='tagline-container'>
-            <p className='tagline'>
+            <p style={{display: props.displayIntroMessage}}
+               className='tagline'
+               >
               Be inspired by random items from the Cooper Hewitt Museum's collection
             </p>
           </div>

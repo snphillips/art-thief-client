@@ -346,6 +346,10 @@ span.footerLink a:hover{
     margin-right: 0;
   }
 
+  .tagline {
+    text-align: left;
+  }
+
   /* dropdown menu */
   #tag {
     font-size: 130%;
