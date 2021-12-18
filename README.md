@@ -2,6 +2,8 @@
 
 View Art Thief here: https://art-thief.surge.sh/
 
+* NOTE: THIS FRONT-END CLIENT IS MEANT TO PAIR WITH THE BACK-END SERVER WHICH CAN BE FOUND HERE:  https://github.com/snphillips/art-thief
+
 ## Project Description
 _"Good artists copy; great artists steal."_ 
 
