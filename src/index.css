@@ -17,7 +17,8 @@ body {
 }
 
 a {
-  color: white;
+  color: white !important;
+  text-decoration: none !important;
 }
 
 .dropdown-menu-container {
@@ -155,7 +156,7 @@ input {
 }
 
 input:hover {
-  background-color: rgba(0,0,0,.8);
+  background-color: #7F0799;
 }
 
 #tag {
@@ -177,8 +178,6 @@ Placeholder image
 img#placeholder-image {
   height: auto;
   width: 90%;
-  cursor: pointer;
-  margin-right: 1rem;
 }
 
 /* not using but keep just in case you do in the future */
@@ -245,25 +244,16 @@ a.learn-more-button {
   text-decoration: none; /*This removes the default underline*/
   white-space: nowrap;   /*must be one line. No text wrap */
 }
+a.learn-more-link:hover {
+  color: white !important;
+  text-decoration: none;
+} 
 
-/* The underline animation */
-a.learn-more-link:after {
-  content: '';
-  position: absolute;
-  width: 0; height: 10px;
-  display: block;
-  margin-top: 4px;
-  right: 0;
-  background: black;
-  transition: width .4s ease;
-  -webkit-transition: width .4s ease;
+button:hover {
+  background-color: #7F0799;
 }
 
-a.learn-more-link:hover:after {
-  width: 100%;
-  left: 0;
-  background: black;
-}
+
 /*==============================
  Footer
 ================================*/
