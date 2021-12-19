@@ -69,6 +69,7 @@ export default function App(props) {
         setDisplayArtResultImage("block");
         setImageURL(response.data.objects[0].images[0].z.url);
         setItemTitle(response.data.objects[0].title);
+        setItemDate(response.data.objects[0].date);
         setItemMedium(response.data.objects[0].medium);
         setItemInfo(response.data.objects[0].label_text);
         setLearnMoreURL(response.data.objects[0].url);
@@ -114,7 +115,8 @@ export default function App(props) {
             <InformationPanel 
               displayArtResultContainer={displayArtResultContainer}
               displayArtResultInfo={displayArtResultInfo}
-              itemTitle={itemTitle} 
+              itemTitle={itemTitle}
+              itemDate={itemDate} 
               itemInfo={itemInfo}
               itemMedium={itemMedium}
               learnMoreURL={learnMoreURL}
